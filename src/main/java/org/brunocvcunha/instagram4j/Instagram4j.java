@@ -189,7 +189,7 @@ public class Instagram4j implements Serializable {
      */
     public InstagramLoginResult login() throws ClientProtocolException, IOException {
 
-        log.info("Logging with user " + username + " and password " + password.replaceAll("[a-zA-Z0-9]", "*"));
+        log.info("Logging with user " + username + " and password " + StringUtils.repeat('*', password.length()));
 
 
         this.sendRequest(new InstagramReadMsisdnHeaderRequest());
